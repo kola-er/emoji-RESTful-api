@@ -1,0 +1,27 @@
+{
+  "name": "kola/naijaemoji",
+  "type": "package",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kolawole Erinoso",
+      "email": "kola.erinoso@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Kola\\": "src/"
+    },
+    "classmap": ["src/"]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Kola\\NaijaEmoji\\Test\\": "tests/"
+    }
+  },
+  "require": {
+    "slim/slim": "^2.6",
+    "kola/potato-orm": "@dev"
+  }
+}
