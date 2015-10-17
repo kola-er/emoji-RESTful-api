@@ -1,5 +1,12 @@
 {
-  "name": "kola/naijaemoji",
+  "name": "kola/emoji-restful-api",
+  "description": "This is a RESTful api for emoji management.",
+  "keywords": [
+    "emoji",
+    "naija",
+    "api",
+    "RESTful"
+  ],
   "type": "package",
   "license": "MIT",
   "authors": [
@@ -15,13 +22,14 @@
     },
     "classmap": ["src/"]
   },
-  "autoload-dev": {
-    "psr-4": {
-      "Kola\\NaijaEmoji\\Test\\": "tests/"
-    }
-  },
   "require": {
     "slim/slim": "^2.6",
     "kola/potato-orm": "@dev"
+  },
+  "require-dev": {
+    "phpspec/phpspec": "~2.0"
+  },
+  "config": {
+    "bin-dir": "bin"
   }
 }

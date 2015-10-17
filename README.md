@@ -1,6 +1,8 @@
 # emoji-RESTful-api
 
+[![Build Status](https://travis-ci.org/andela-kerinoso/emoji-RESTful-api.svg)](https://github.com/andela-kerinoso/emoji-RESTful-api)
 
+A RESTful API for emoji storage and management. This API is managed by a simple but secured token-based authentication.
 
 ## Installation
 
@@ -9,7 +11,7 @@
 Via Composer
 
 ``` bash
-$ composer require
+$ composer require kola/emoji-restful-api
 ```
 
 ``` bash
@@ -18,13 +20,13 @@ $ composer install
 
 ## Usage
 
+Create mysql database with users and emojis tables. Do not forget to enable utf8-mb4 charset encoding on the database and each table.
+
+If you need help with enabling utf8-mb4, here is a [guide](https://mathiasbynens.be/notes/mysql-utf8mb4).
 
 ## Change log
 
 Please check out [CHANGELOG](CHANGELOG.md) file for information on what has changed recently.
-
-## Testing
-
 
 ## Contributing
 
