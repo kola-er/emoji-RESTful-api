@@ -6,7 +6,7 @@
  * @license MIT <https://opensource.org/licenses/MIT>
  */
 
-require_once 'vendor/autoload.php';
+require_once '../vendor/autoload.php';
 
 use Slim\Slim;
 use Kola\Api\Emoji\Helper\Setup;
