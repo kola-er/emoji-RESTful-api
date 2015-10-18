@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/andela-kerinoso/emoji-RESTful-api.svg)](https://github.com/andela-kerinoso/emoji-RESTful-api)
 
-A RESTful API for emoji storage and management. This API is managed by a simple but secured token-based authentication.
+A RESTful API for emoji storage and management. This API is managed by a simple but secured token-based authentication. Enjoy using [naijamoji](http://naijamoji.herokuapp.com/)
 
 ## Installation
 
