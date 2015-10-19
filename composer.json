@@ -27,6 +27,7 @@
     "kola/potato-orm": "@dev"
   },
   "require-dev": {
-    "phpspec/phpspec": "~2.0"
+    "phpspec/phpspec": "~2.0",
+    "heroku/heroku-buildpack-php": "^80.0"
   }
 }
