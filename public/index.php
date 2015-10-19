@@ -81,6 +81,11 @@ $app->delete('/emojis/:id', function ($id) use ($app) {
     echo EmojiController::delete($id, $app);
 });
 
+// Welcome
+$app->get('/', function () {
+	echo '<h1>Welcome to Naijamoji</h1>';
+});
+
 
 // Run Slim instance
 $app->run();

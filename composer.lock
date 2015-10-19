@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/andela-kerinoso/potato-orm.git",
-                "reference": "76c78741b98ae8f2dbcd411b195494bc06702caa"
+                "reference": "39351d2a13a7959ec9bb7403af37e9677a1e50d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/andela-kerinoso/potato-orm/zipball/76c78741b98ae8f2dbcd411b195494bc06702caa",
-                "reference": "76c78741b98ae8f2dbcd411b195494bc06702caa",
+                "url": "https://api.github.com/repos/andela-kerinoso/potato-orm/zipball/39351d2a13a7959ec9bb7403af37e9677a1e50d1",
+                "reference": "39351d2a13a7959ec9bb7403af37e9677a1e50d1",
                 "shasum": ""
             },
             "require": {
@@ -54,7 +54,7 @@
                 "orm",
                 "persistence"
             ],
-            "time": "2015-10-16 12:08:04"
+            "time": "2015-10-19 08:47:17"
         },
         {
             "name": "slim/slim",
