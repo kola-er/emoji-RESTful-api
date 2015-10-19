@@ -23,6 +23,7 @@
     "classmap": ["src/"]
   },
   "require": {
+    "php": "~5.5.0",
     "slim/slim": "^2.6",
     "kola/potato-orm": "@dev"
   },

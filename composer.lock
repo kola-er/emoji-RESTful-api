@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "43bbda9393c028ec8368efe50bfc9a06",
-    "content-hash": "680c7ccdaeb9609a2d95415247b155a1",
+    "hash": "a8c953b94d4fce093f8ab20799fb48d7",
+    "content-hash": "509d7591fd636c107b0d41d8a9a0ae21",
     "packages": [
         {
             "name": "kola/potato-orm",
@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/andela-kerinoso/potato-orm.git",
-                "reference": "39351d2a13a7959ec9bb7403af37e9677a1e50d1"
+                "reference": "00ce7fcecda42a331e65f1ee5c6d74a578dffd0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/andela-kerinoso/potato-orm/zipball/39351d2a13a7959ec9bb7403af37e9677a1e50d1",
-                "reference": "39351d2a13a7959ec9bb7403af37e9677a1e50d1",
+                "url": "https://api.github.com/repos/andela-kerinoso/potato-orm/zipball/00ce7fcecda42a331e65f1ee5c6d74a578dffd0d",
+                "reference": "00ce7fcecda42a331e65f1ee5c6d74a578dffd0d",
                 "shasum": ""
             },
             "require": {
@@ -54,7 +54,7 @@
                 "orm",
                 "persistence"
             ],
-            "time": "2015-10-19 08:47:17"
+            "time": "2015-10-19 09:07:55"
         },
         {
             "name": "slim/slim",
@@ -929,6 +929,8 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": "~5.5.0"
+    },
     "platform-dev": []
 }
