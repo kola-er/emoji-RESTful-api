@@ -36,11 +36,12 @@ class Authenticate
 
 		if ($password == $user->getRecord()['dbData']['password']) {
 			$token = bin2hex(openssl_random_pseudo_bytes(16));
+			$test = Setup::setToken($user, $token);
 
-			if (Setup::setToken($user, $token) === 1) {
+			if ($test === 1) {
 				return json_encode(['username' => $username, 'Authorization' => $token]);
 			} else {
-				$app->halt(503);
+				$app->halt(503);//, json_encode(['message' => $test]));
 			}
 		} else {
 			$app->halt(404, json_encode(['message' => 'Incorrect password']));

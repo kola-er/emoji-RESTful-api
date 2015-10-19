@@ -19,8 +19,10 @@ class Setup {
 	 */
 	public static function loadDotenv()
 	{
-		$dotenv = new \Dotenv\Dotenv($_SERVER['DOCUMENT_ROOT']);
-		$dotenv->load();
+		if (! getenv('APP_ENV')) {
+			$dotenv = new \Dotenv\Dotenv($_SERVER['DOCUMENT_ROOT']);
+			$dotenv->load();
+		}
 	}
 
 	/**
