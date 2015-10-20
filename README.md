@@ -20,9 +20,7 @@ $ composer install
 
 ## Usage
 
-Create mysql database with users and emojis tables. Do not forget to enable utf8-mb4 charset encoding on the database and each table.
-
-If you need help with enabling utf8-mb4, here is a [guide](https://mathiasbynens.be/notes/mysql-utf8mb4).
+Visit [naijamoji](http://naijamoji.herokuapp.com/).
 
 ## Change log
 
