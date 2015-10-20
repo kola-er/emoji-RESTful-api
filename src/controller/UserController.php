@@ -70,11 +70,10 @@ class UserController {
 		if (is_object($user)) {
 
 			$fields = $app->request->isPut() ? $app->request->put() : $app->request->patch();
-			$password = md5($fields['password']);
 
-			if ($password == $user->getRecord()['dbData']['password']) {
-				$user->password = $password;
-				$check = $user->save;
+			if (md5($fields['password']) == $user->getRecord()['dbData']['password']) {
+				$user->password = md5($fields['passwordNew']);
+				$check = $user->save();
 
 				if ($check === 1) {
 					return json_encode(['message' => 'Password Updated']);
@@ -109,9 +108,8 @@ class UserController {
 		if (is_object($user)) {
 
 			$fields = $app->request->isPut() ? $app->request->put() : $app->request->patch();
-			$password = md5($fields['password']);
 
-			if ($password == $user->getRecord()['dbData']['password']) {
+			if (md5($fields['password']) == $user->getRecord()['dbData']['password']) {
 				$check = User::destroy($user->getRecord()['dbData']['id']);
 
 				if ($check === 1) {
