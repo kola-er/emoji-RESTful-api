@@ -1,5 +1,11 @@
 <?php
-
+/**
+ * This class holds a set of background controller methods for users' accounts management.
+ *
+ * @package Kola\Api\Emoji\Controller\UserController
+ * @author  Kolawole ERINOSO <kola.erinoso@gmail.com>
+ * @license MIT <https://opensource.org/licenses/MIT>
+ */
 
 namespace Kola\Api\Emoji\Controller;
 
@@ -20,7 +26,7 @@ class UserController {
 
 		$fields = $app->request->post();
 
-		if (! empty($fields)) {
+		if ((! empty($fields)) && (! is_null($fields['purpose']))) {
 			if ($fields['password1'] == $fields['password']) {
 				$user = new User;
 				$user->username = $fields['username'];
@@ -45,9 +51,9 @@ class UserController {
 	}
 
 	/**
-	 * Update an emoji resource
+	 * Change a user's password
 	 *
-	 * @param int $id ID of emoji owner
+	 * string $username username of a user
 	 * @param Slim $app
 	 * @return string
 	 */
@@ -84,9 +90,9 @@ class UserController {
 	}
 
 	/**
-	 * Destroy an emoji resource
+	 * Delete user's account
 	 *
-	 * @param int $id ID of emoji owner
+	 * @param string $username username of a user
 	 * @param Slim $app
 	 * @return string
 	 */

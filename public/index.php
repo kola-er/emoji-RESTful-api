@@ -86,26 +86,32 @@ $app->delete('/emojis/:id', function ($id) use ($app) {
 // Welcome
 $app->get('/', function () {
 	echo "<div style='background:url(img/emoji.jpg) no-repeat;background-size:cover'>" .
-		"<div style='text-align:center;padding-top:150px'><h1>Welcome to Naijamoji. <span style='font-weight:normal'>Register <a href='/register'>here</a></span></h1></div>" .
+		"<div style='text-align:center;color:#E5E5E5;padding-top:300px'>" .
+		"<h1>Welcome to Naijamoji.</h1>" .
+		"<span style='font-weight:normal'>Register <a href='/register'>here</a></span>" .
+		"</div>" .
 		"</div>";
 });
 
+// User registration route
 $app->get('/register', function () {
-	echo '<form action="/register" method="post">' .
-		'<label>Username: </label>' .
-		'<input type="text" name="username" placeholder="Enter a username" />' .
-		'<label>Password: </label>' .
-		'<input type="password" name="password" placeholder="Enter a password" />' .
-		'<label>Confirm Password: </label>' .
-		'<input type="password" name="password1" placeholder="Enter the password once more" />' .
-		'<input type="submit" value="Register" />' .
-		'</form>';
+	echo "<div style='padding-left:600px;padding-top:300px'>" .
+		"<form action='/register' method='post'>" .
+		"Username: <input type='text' required autocomplete='off' name='username' placeholder='Enter a username' /><br>" .
+		"Password: <input type='password' required autocomplete='off' name='password' placeholder='Enter a password' /><br>" .
+		"Confirm Password: <input type='password' required autocomplete='off' name='password1' placeholder='Enter the password once more' /><br>" .
+		"Purpose: <textarea name='purpose' required maxlength='50' rows='4' cols='50' placeholder='Why do you want to use our service?'></textarea><br>" .
+		"<input type='submit' value='Register' />" .
+		"</form>" .
+		"</div>";
 });
 
-$app->post('/register', function () use ($app){
+// Account creation for new users route
+ $app->post('/register', function () use ($app){
 	echo UserController::create($app);
 });
 
+// User account update route
 $app->put('/user/:username', function ($username) use ($app) {
 	// Token validation middleware
 	Authorize::validateToken($app);
@@ -113,6 +119,7 @@ $app->put('/user/:username', function ($username) use ($app) {
 	echo UserController::update($username, $app);
 });
 
+// User account update route
 $app->patch('/user/:username', function ($username) use ($app) {
 	// Token validation middleware
 	Authorize::validateToken($app);
@@ -120,12 +127,14 @@ $app->patch('/user/:username', function ($username) use ($app) {
 	echo UserController::update($username, $app);
 });
 
+// User account deletion route
 $app->delete('/user/:username', function ($username) use ($app) {
 	// Token validation middleware
 	Authorize::validateToken($app);
 
 	echo UserController::delete($username, $app);
 });
+
 
 // Run Slim instance
 $app->run();

@@ -1,6 +1,6 @@
 <?php
 /**
- * This class maps to database table user(s).
+ * This class maps to database table users.
  *
  * @package Kola\Api\Emoji\DbTable\User
  * @author  Kolawole ERINOSO <kola.erinoso@gmail.com>

@@ -1,6 +1,6 @@
 <?php
 /**
- * This class holds a set of background controller methods for all interface routes of the application.
+ * This class holds a set of background controller methods for emoji management.
  *
  * @package Kola\Api\Emoji\Controller\EmojiController
  * @author  Kolawole ERINOSO <kola.erinoso@gmail.com>

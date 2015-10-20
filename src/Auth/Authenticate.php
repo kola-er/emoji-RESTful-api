@@ -26,7 +26,7 @@ class Authenticate
 		$app->response->headers->set('Content-Type', 'application/json');
 
 		$username = $app->request->post('username');
-		$password = $app->request->post('password');
+		$password = md5($app->request->post('password'));
 
 		try {
 			$user = User::where('username', $username);
