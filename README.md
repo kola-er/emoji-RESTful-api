@@ -10,7 +10,6 @@ A RESTful API for emoji storage and management. This API is managed by a simple 
 
 Via Composer
 
-``` bash
 $ composer require kola/emoji-restful-api
 ```
 
@@ -22,9 +21,9 @@ $ composer install
 
 Visit [naijamoji](http://naijamoji.herokuapp.com/).
 
-> Methods accessible to the public
+## Methods accessible to the public
 
-* ##Single emoji retrieval
+* Single emoji retrieval
 
 REQUEST:
 ``` bash
@@ -118,6 +117,209 @@ HEADER: {"status": 404}
 BODY:
 {
   "message": "Not Found"
+}
+```
+
+* Login authentication
+REQUEST:
+``` bash
+POST https://naijamoji.herokuapp.com/auth/login
+HEADER: {"Content-Type": "application/json"}
+BODY:
+{
+  "username": your_username,
+  "password": your_password
+}
+```
+RESPONSE:
+``` bash
+HEADER: {"status": 200}
+BODY:
+{
+  "username": "ogeni1",
+  "Authorization": "dff6e05687698b9a7b4dc7ed32bef67d"
+}
+```
+
+## Private Methods (Registration required)
+
+* Registration
+REQUEST:
+``` bash
+POST https://naijamoji.herokuapp.com/register
+HEADER: {"Content-Type": "application/json"}
+BODY:
+{
+  "username": your_preferred_username,
+  "password": your_preferred_password,
+  "password1": confirmation_of_your_preferred_password,
+  "purpose": your_purpose_for_registration
+}
+```
+RESPONSE:
+``` bash
+HEADER: {"status": 200}
+BODY:
+{
+  "username": "ogeni",
+  "message": "Registration Complete! Go ahead and login to get a token."
+}
+```
+
+* Logout
+REQUEST:
+``` bash
+GET https://naijamoji.herokuapp.com/auth/logout
+HEADER:
+{
+  "Content-Type": "application/json",
+  "Authorization": "dff6e05687698b9a7b4dc7ed32bef67d"
+}
+```
+RESPONSE:
+``` bash
+HEADER: {"status": 200}
+BODY:
+{
+  "message": "Logged out"
+}
+
+* Posting of emojis
+REQUEST:
+``` bash
+POST https://naijamoji.herokuapp.com/emojis
+HEADER:
+{
+  "Content-Type": "application/json",
+  "Authorization": "dff6e05687698b9a7b4dc7ed32bef67d"
+}
+BODY:
+{
+  "emoji_name": "ojuju calabar",
+  "emoji_char": "👹",
+  "category": "festival",
+  "keyword": "masquerade eegun ojuju_calabar"
+}
+```
+RESPONSE:
+```bash
+HEADER: {"status": 200}
+BODY:
+{
+  "id": 20,
+  "user_id": 14,
+  "emoji_name": "ojuju calabar",
+  "emoji_char": "👹",
+  "keyword": [
+    "masquerade",
+    "eegun",
+    "ojuju_calabar"
+  ],
+  "category": "festival",
+  "date_created": "2015-10-28 11:19:53",
+  "date_modified": "2015-10-28 11:19:53"
+}
+```
+
+* Updating emojis
+REQUEST:
+``` bash
+PUT https://naijamoji.herokuapp.com/emojis/20
+PATCH https://naijamoji.herokuapp.com/emojis/20
+HEADER:
+{
+  "Content-Type": "application/json",
+  "Authorization": "dff6e05687698b9a7b4dc7ed32bef67d"
+}
+BODY:
+{
+  "category": "scary"
+}
+```
+RESPONSE:
+```bash
+HEADER: {"status": 200}
+BODY:
+{
+  "id": 20,
+  "user_id": 14,
+  "emoji_name": "ojuju calabar",
+  "emoji_char": "👹",
+  "keyword": [
+    "masquerade",
+    "eegun",
+    "ojuju_calabar"
+  ],
+  "category": "scary",
+  "date_created": "2015-10-28 11:19:53",
+  "date_modified": "2015-10-28 11:27:30"
+}
+```
+
+* Deletion of emojis
+REQUEST:
+```bash
+DELETE https://naijamoji.herokuapp.com/emojis/20
+HEADER:
+{
+  "Content-Type": "application/json",
+  "Authorization": "dff6e05687698b9a7b4dc7ed32bef67d"
+}
+```
+RESPONSE:
+``` bash
+HEADER: {"status": 200}
+BODY:
+{
+  "message": "Deleted"
+}
+```
+
+* Change of user's password
+REQUEST:
+``` bash
+PATCH https://naijamoji.herokuapp.com/user/your_username
+HEADER:
+{
+  "Content-Type": "application/json",
+  "Authorization": "dff6e05687698b9a7b4dc7ed32bef67d"
+}
+BODY:
+{
+  "username": "your_username",
+  "password": "your_password",
+  "passwordNew": "your_new_password"
+}
+```
+RESPONSE:
+``` bash
+HEADER: {"status": 200}
+BODY:
+{
+  "message": "Password Updated"
+}
+
+* Deletion of one's account
+REQUEST:
+``` bash
+DELETE https://naijamoji.herokuapp.com/user/your_username
+HEADER:
+{
+  "Content-Type": "application/json",
+  "Authorization": "dff6e05687698b9a7b4dc7ed32bef67d"
+}
+BODY:
+{
+  "username": "your_username",
+  "password": "your_password"
+}
+```
+RESPONSE:
+``` bash
+HEADER: {"status": 200}
+BODY:
+{
+  "message": "Account Deleted"
 }
 ```
 
