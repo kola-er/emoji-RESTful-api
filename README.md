@@ -121,6 +121,7 @@ BODY:
 ```
 
 * Login authentication
+
 REQUEST:
 ``` bash
 POST https://naijamoji.herokuapp.com/auth/login
@@ -144,6 +145,7 @@ BODY:
 ## Private Methods (Registration required)
 
 * Registration
+
 REQUEST:
 ``` bash
 POST https://naijamoji.herokuapp.com/register
@@ -167,6 +169,7 @@ BODY:
 ```
 
 * Logout
+
 REQUEST:
 ``` bash
 GET https://naijamoji.herokuapp.com/auth/logout
@@ -185,6 +188,7 @@ BODY:
 }
 
 * Posting of emojis
+
 REQUEST:
 ``` bash
 POST https://naijamoji.herokuapp.com/emojis
@@ -222,6 +226,7 @@ BODY:
 ```
 
 * Updating emojis
+
 REQUEST:
 ``` bash
 PUT https://naijamoji.herokuapp.com/emojis/20
@@ -257,6 +262,7 @@ BODY:
 ```
 
 * Deletion of emojis
+
 REQUEST:
 ```bash
 DELETE https://naijamoji.herokuapp.com/emojis/20
@@ -276,6 +282,7 @@ BODY:
 ```
 
 * Change of user's password
+
 REQUEST:
 ``` bash
 PATCH https://naijamoji.herokuapp.com/user/your_username
@@ -298,8 +305,10 @@ BODY:
 {
   "message": "Password Updated"
 }
+```
 
 * Deletion of one's account
+
 REQUEST:
 ``` bash
 DELETE https://naijamoji.herokuapp.com/user/your_username
