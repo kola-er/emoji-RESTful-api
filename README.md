@@ -24,7 +24,7 @@ Visit [naijamoji](http://naijamoji.herokuapp.com/).
 
 > Methods accessible to the public
 
-* Single emoji retrieval
+* ##Single emoji retrieval
 
 REQUEST:
 ``` bash
