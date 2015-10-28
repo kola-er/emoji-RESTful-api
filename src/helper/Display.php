@@ -74,7 +74,7 @@ class HtmlDisplay
   		</tr>
   		<tr>
     		<td>GET /register</td>
-    		<td>Displays user registration form (For registragion via browser only!)</td>
+    		<td>Displays user registration form (For registration via browser only!)</td>
   		</tr>
   		<tr>
     		<td>POST /register</td>
